@@ -1,4 +1,4 @@
-# TalentLens — AI HR Recruitment Assistant (TNSDC Use Case #2 · Jeff Build)
+# TalentLens — AI HR Recruitment Assistant (TNSDC Use Case #2 · SOWBARNIKA Build)
 
 [![Track: IBM Agentic AI](https://img.shields.io/badge/TNSDC-IBM_Agentic_AI-4F46E5)](https://www.naanmudhalvan.tn.gov.in/)
 [![Use Case #2](https://img.shields.io/badge/Use_Case-HR_Recruitment_Assistant-0F172A)](./data/samples/sample_senior_jd.txt)
@@ -10,7 +10,7 @@
 
 ## Program Alignment (TNSDC 5-Day Plan)
 
-| Day | Focus (Plan) | Jeff Build Output |
+| Day | Focus (Plan) | SOWBARNIKA Build Output |
 |-----|--------------|-------------------|
 | **D1** | Agentic AI & Project Foundation — use case selection, architecture, Python/LLM + Ollama | Use Case #2 selected, `src/config.py` + `src/llm.py` (`TalentLLM` / `gpt-oss:120b`), Ollama Cloud ready |
 | **D2** | Building the AI Agent — model/tools/memory, tool-calling (LangChain), multi-tool agent | `src/tools.py` (`identify_skills`/`score_profile`), tool-calling tested |
@@ -58,7 +58,7 @@ Endpoints: `GET /` · `GET /api/health` · `POST /api/evaluate` (multipart `cand
 ## Layout
 
 ```
-Jeff/
+SOWBARNIKA/
 ├── src/  config, llm, rag, tools, graph, server
 ├── static/  index.html, styles.css, app.js
 ├── data/samples/  sample_senior_jd.txt + alex_chen resume (neutral)
@@ -72,4 +72,4 @@ Jeff/
 - Final project + docs + GitHub link → Adroit ProLearn (LMS) Day 5 (§8)
 - Quiz Day 3 on LMS, attendance QR x2/day, IBM CEP exam prep access
 
-— Jeff build, TNSDC IBM Agentic AI Track, 31 Aug–4 Sep 2026.
+— SOWBARNIKA build, TNSDC IBM Agentic AI Track, 31 Aug–4 Sep 2026.
