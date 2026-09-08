@@ -1,0 +1,24 @@
+Role: Senior Agentic AI & Systems Engineer
+Experience Level: 4-6 Years
+Location: Remote / Hybrid
+
+About the Role:
+We are seeking an experienced Backend and AI Systems Engineer to spearhead our Agentic AI initiatives. You will design, build, and deploy multi-agent workflows, semantic retrieval systems (RAG), and resilient microservices.
+
+Responsibilities:
+- Build autonomous agent workflows using LangGraph, LangChain, and modern LLM tool-calling APIs.
+- Design low-latency semantic search and retrieval architectures using vector databases (ChromaDB / FAISS).
+- Implement performant, production-ready microservices in Python with FastAPI and Docker.
+- Orchestrate distributed tasks with Redis caching and asynchronous queues.
+- Ensure high test coverage and robust CI/CD deployment pipelines on GitHub Actions.
+
+Required Technical Skills:
+- Programming: Python, Bash, SQL
+- AI / LLM Frameworks: LangChain, LangGraph, RAG, Embeddings, OpenAI/Ollama APIs
+- Backend & Microservices: FastAPI, REST APIs, Asynchronous Programming
+- Databases: PostgreSQL, Redis, Vector DBs (ChromaDB / FAISS)
+- Infrastructure: Docker, Kubernetes, Git, CI/CD, Linux
+
+Nice to Have:
+- Experience deploying local open-weight LLMs.
+- Knowledge of Model Context Protocol (MCP) or distributed agent coordination.

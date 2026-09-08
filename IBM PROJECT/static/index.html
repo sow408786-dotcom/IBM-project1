@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentLens — Hiring Copilot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar__left">
+      <div class="logo">TL</div>
+      <div>
+        <div class="wordmark">TalentLens</div>
+        <div class="submark">TNSDC Use Case #2 · HR Recruitment Assistant</div>
+      </div>
+    </div>
+    <div class="topbar__right">
+      <div class="theme-switch" role="group" aria-label="Theme">
+        <button class="theme-switch__btn is-active" id="themeLight" type="button">Light</button>
+        <button class="theme-switch__btn" id="themeDark" type="button">Dark</button>
+      </div>
+      <div class="actions">
+        <button class="btn btn--ghost btn--sm" id="btnPresetSenior" type="button">Senior AI</button>
+        <button class="btn btn--ghost btn--sm" id="btnPresetJunior" type="button">Junior</button>
+        <button class="btn btn--ghost btn--sm" id="btnReset" type="button">Reset</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Teal minimal: single-column wizard + vertical left rail -->
+  <div class="app-shell">
+    <aside class="workflow-rail" id="pipelineCard" aria-label="Workflow progress">
+      <div class="rail__head">
+        <span class="rail__label">Workflow</span>
+        <span class="tracker__badge" id="pipelineStatusBadge">Idle</span>
+        <button class="rail__toggle" id="pipelineHeader" type="button" aria-label="Toggle">⋯</button>
+      </div>
+      <ol class="rail__steps" id="pipelineStatus">
+        <li class="tracker__step" id="step1"><span class="dot"></span><span class="step__num">1</span> Ingest</li>
+        <li class="tracker__step" id="step2"><span class="dot"></span><span class="step__num">2</span> Retrieve</li>
+        <li class="tracker__step" id="step3"><span class="dot"></span><span class="step__num">3</span> Score</li>
+        <li class="tracker__step" id="step4"><span class="dot"></span><span class="step__num">4</span> Draft 4 rounds</li>
+        <li class="tracker__step" id="step5"><span class="dot"></span><span class="step__num">5</span> Brief</li>
+      </ol>
+      <p class="rail__hint">Runs 4 threads in parallel. PDF is deleted after read.</p>
+    </aside>
+
+    <main class="wizard" id="appContainer">
+      <section class="panel panel--input" id="inputCard">
+        <div class="panel__head">
+          <h2 class="panel__title">Candidate &amp; Role</h2>
+          <span class="pill">Step 1 — Provide inputs</span>
+        </div>
+        <form id="evaluationForm" class="form">
+          <div class="grid2">
+            <label class="field">
+              <span class="field__label">Candidate</span>
+              <input id="candidateName" name="candidate_name" type="text" value="Alex Chen" required />
+            </label>
+            <label class="field">
+              <span class="field__label">Target role</span>
+              <input id="targetRole" name="target_role" type="text" value="Senior Agentic AI & Systems Engineer" required />
+            </label>
+          </div>
+          <label class="field">
+            <span class="field__label">Job description</span>
+            <textarea id="jobDescription" name="job_description" rows="4" required placeholder="Paste the JD — responsibilities, stack, must-haves…"></textarea>
+          </label>
+          <label class="field">
+            <span class="field__label">Resume — PDF</span>
+            <div class="uploader" id="dropArea">
+              <span class="uploader__icon">↥</span>
+              <span class="uploader__text" id="dropText"><strong>Choose PDF</strong> or drag & drop</span>
+              <input id="resumePdf" name="resume_pdf" type="file" accept=".pdf" hidden />
+            </div>
+          </label>
+          <label class="field">
+            <span class="field__label">Or paste resume text</span>
+            <textarea id="resumeText" name="resume_text" rows="5" placeholder="Plain text works too — PDF is optional"></textarea>
+          </label>
+          <button id="btnSubmit" type="submit" class="btn btn--primary btn--block"><span class="btn__icon">▶</span> Run Assessment</button>
+        </form>
+      </section>
+
+      <section class="panel panel--results" id="resultsCard">
+        <div class="panel__head">
+          <h2 class="panel__title">Hiring Brief</h2>
+          <button class="btn btn--ghost btn--sm" id="btnCopyDossier" style="display:none">Copy brief</button>
+        </div>
+        <div id="resultsContent" style="display:none">
+          <div class="score-card">
+            <div class="score-card__left">
+              <div class="score" id="scoreValue">0%</div>
+              <div class="score__label">Fit</div>
+            </div>
+            <div class="score-card__right">
+              <div class="verdict" id="recBanner">Recommendation —</div>
+              <p class="summary" id="candidateSummaryText"></p>
+              <div class="meta">
+                <div class="meta__label">Strengths</div>
+                <div class="chips" id="matchedSkillsRow"></div>
+              </div>
+              <div class="meta">
+                <div class="meta__label">Gaps</div>
+                <div class="chips" id="missingSkillsRow"></div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs" role="tablist">
+            <button class="tab is-active" data-round="round1" role="tab">R1 · Screen</button>
+            <button class="tab" data-round="round2" role="tab">R2 · Technical</button>
+            <button class="tab" data-round="round3" role="tab">R3 · Architecture</button>
+            <button class="tab" data-round="round4" role="tab">R4 · Behavioural</button>
+          </div>
+          <div class="stack" id="questionsContainer"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

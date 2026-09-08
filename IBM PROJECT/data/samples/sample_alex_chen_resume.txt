@@ -1,0 +1,28 @@
+Alex Chen
+Email: alex.chen@example.com | Phone: +1-555-0199 | Location: San Francisco, CA
+GitHub: github.com/alexchen-dev | LinkedIn: linkedin.com/in/alexchen-ai
+
+PROFESSIONAL SUMMARY:
+Lead AI & Backend Systems Engineer with 5+ years of experience engineering scalable Python architectures, Agentic AI state machines, and high-performance vector retrieval pipelines. Proven track record deploying production-grade LangGraph workflows, FastAPI microservices, and Dockerized environments across cloud ecosystems.
+
+CORE TECHNICAL SKILLS:
+- Languages: Python, SQL, Bash
+- AI & Agentic Systems: LangChain, LangGraph, Agentic RAG, Vector Search, ChromaDB, FAISS, HuggingFace
+- Backend & Frameworks: FastAPI, Flask, Asynchronous I/O, REST APIs
+- Databases & Caching: PostgreSQL, Redis, SQLite
+- DevOps & Cloud: Docker, Kubernetes, Git, GitHub Actions, Linux, CI/CD
+
+PROFESSIONAL EXPERIENCE:
+Lead AI Systems Engineer | Nova Tech Solutions (2022 - Present)
+- Designed and built a multi-agent diagnostic routing workflow with LangChain and LangGraph, cutting support ticket escalation times by 42%.
+- Developed an in-memory and ChromaDB semantic RAG retrieval engine handling over 120,000 queries daily with p95 response time under 180ms.
+- Containerized backend services with Docker and orchestrated microservices on Kubernetes, maintaining 99.95% uptime.
+- Integrated Redis for distributed task queues and session state management.
+
+Software Engineer | Apex Cloud Technologies (2019 - 2022)
+- Engineered scalable RESTful backend APIs using Python, Flask, and PostgreSQL.
+- Implemented automated CI/CD deployment pipelines on GitHub Actions, accelerating release cycles by 40%.
+- Authored comprehensive unit and integration test suites using PyTest, achieving over 92% test coverage.
+
+EDUCATION:
+Bachelor of Science in Computer Science | University of California, Davis (2019)
